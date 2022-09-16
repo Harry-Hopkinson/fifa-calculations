@@ -29,13 +29,27 @@ for (let i = 0; i < data.length; i++) {
       6;
     average = Math.round(average);
 
-    if (average === Number(player.OVR)) {
-      correct++;
-      console.log(player.name + " is correct");
+    if (strict) {
+      if (average === Number(player.OVR)) {
+        correct++;
+        console.log(player.name + " is correct");
+      } else {
+        wrong++;
+        console.log(player.name + " is wrong");
+      }
     } else {
-      wrong++;
-      diff += Math.abs(average - Number(player.OVR));
-      console.log(diff);
+      // accept an average 3 low or higher
+      if (
+        average <= Number(player.OVR) + 3 &&
+        average >= Number(player.OVR) - 3
+      ) {
+        correct++;
+        console.log(player.name + " is correct");
+      } else {
+        wrong++;
+        diff += Math.abs(average - Number(player.OVR));
+        console.log(diff);
+      }
     }
     diff = 0;
   } else if (
@@ -53,15 +67,28 @@ for (let i = 0; i < data.length; i++) {
       6;
     average = Math.round(average);
 
-    // if the average equals the ovr
-
-    if (average === Number(player.OVR)) {
-      correct++;
-      console.log(player.name + " is correct");
+    if (strict) {
+      if (average === Number(player.OVR)) {
+        correct++;
+        console.log(player.name + " is correct");
+      } else {
+        wrong++;
+        console.log(player.name + " is wrong");
+      }
     } else {
-      wrong++;
-      diff += Math.abs(average - Number(player.OVR));
-      console.log(diff);
+      // accept an average 3 low or higher
+      if (
+        average <= Number(player.OVR) + 3 &&
+        average >= Number(player.OVR) - 3
+      ) {
+        correct++;
+        console.log(player.name + " is correct");
+        console.log();
+      } else {
+        wrong++;
+        diff += Math.abs(average - Number(player.OVR));
+        console.log(diff);
+      }
     }
     diff = 0;
   }
