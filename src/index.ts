@@ -29,10 +29,10 @@ for (let i = 0; i < data.length; i++) {
     if (strict) {
       if (average === Number(player.OVR)) {
         correct++;
-        console.log(player.name + " is correct");
+        console.log(player.Name + " is correct");
       } else {
         wrong++;
-        console.log(player.name + " is wrong");
+        console.log(player.Name + " is wrong");
       }
     } else {
       // accept an average 3 low or higher
@@ -41,7 +41,7 @@ for (let i = 0; i < data.length; i++) {
         average >= Number(player.OVR) - 3
       ) {
         correct++;
-        console.log(player.name + " is correct");
+        console.log(player.Name + " is correct");
       } else {
         wrong++;
         diff += Math.abs(average - Number(player.OVR));
@@ -67,10 +67,10 @@ for (let i = 0; i < data.length; i++) {
     if (strict) {
       if (average === Number(player.OVR)) {
         correct++;
-        console.log(player.name + " is correct");
+        console.log(player.Name + " is correct");
       } else {
         wrong++;
-        console.log(player.name + " is wrong");
+        console.log(player.Name + " is wrong");
       }
     } else {
       // accept an average 3 low or higher
@@ -79,7 +79,7 @@ for (let i = 0; i < data.length; i++) {
         average >= Number(player.OVR) - 3
       ) {
         correct++;
-        console.log(player.name + " is correct");
+        console.log(player.Name + " is correct");
         console.log();
       } else {
         wrong++;

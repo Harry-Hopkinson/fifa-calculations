@@ -3,7 +3,7 @@ export type Player = {
   Marking: string;
   Strength: string;
   Dribbling: string;
-  name: string;
+  Name: string;
   Stamina: string;
   LongPassing: string;
   StandingTackle: string;

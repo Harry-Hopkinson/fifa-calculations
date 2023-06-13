@@ -4,7 +4,8 @@
   "description": "A Program that calculates averages using Fifa Data.",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,6 @@
   "devDependencies": {
     "@types/node": "18.11.9",
     "prompt-sync": "4.2.0",
-    "ts-node": "10.9.1",
     "typescript": "4.9.3"
   }
 }
