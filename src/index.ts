@@ -2,9 +2,6 @@ import * as data from "../data/data.json";
 import { Player } from "./player";
 const prompt = require("prompt-sync")();
 
-// this is the number of how
-// many players average matches
-// their total
 let correct: number = 0;
 let wrong: number = 0;
 let diff: number = 0;

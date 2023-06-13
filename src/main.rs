@@ -12,6 +12,7 @@ fn main() {
     let mut correct: i32 = 0;
     let mut wrong: i32 = 0;
     let mut diff: i32 = 0;
+    let int_conversion_error: String = "Cannot convert to integer".to_string();
     #[allow(unused_assignments)]
     let mut strict: bool = false;
 
@@ -21,48 +22,48 @@ fn main() {
     strict = input.trim() == "y";
 
     for player in &players {
-        if player.pos == "CB" || player.pos == "LB" || player.pos == "RB" {
-            let average: f32 = (player.defending + player.standing_tackle + player.sliding_tackle + player.heading + player.strength + player.aggression) as f32 / 6.0;
+        if player.POS == "CB" || player.POS == "LB" || player.POS == "RB" {
+            let average: f32 = (player.Defending.parse::<i32>().expect(&int_conversion_error) + player.StandingTackle.parse::<i32>().expect(&int_conversion_error) + player.SlidingTackle.parse::<i32>().expect(&int_conversion_error) + player.Heading.parse::<i32>().expect(&int_conversion_error) + player.Strength.parse::<i32>().expect(&int_conversion_error) + player.Aggression.parse::<i32>().expect(&int_conversion_error)) as f32 / 6.0;
             let average = average.round() as i32;
 
             if strict {
-                if average == player.ovr {
+                if average == player.OVR.parse::<i32>().expect(&int_conversion_error) {
                     correct += 1;
-                    println!("{} is correct", player.name);
+                    println!("{} is correct", player.Name);
                 } else {
                     wrong += 1;
-                    println!("{} is wrong", player.name);
+                    println!("{} is wrong", player.Name);
                 }
             } else {
-                if average <= player.ovr + 3 && average >= player.ovr - 3 {
+                if average <= (player.OVR.parse::<i32>().expect(&int_conversion_error) + 3) && average >= (player.OVR.parse::<i32>().expect(&int_conversion_error)) - 3 {
                     correct += 1;
-                    println!("{} is correct", player.name);
+                    println!("{} is correct", player.Name);
                 } else {
                     wrong += 1;
-                    diff += (average - player.ovr).abs();
+                    diff += (average - player.OVR.parse::<i32>().expect(&int_conversion_error)).abs();
                     println!("{}", diff);
                 }
             }
             diff = 0;
-        } else if player.pos == "CM" || player.pos == "CDM" || player.pos == "CAM" {
-            let average: f32 = (player.passing + player.dribbling + player.vision + player.crossing + player.short_passing + player.long_passing) as f32 / 6.0;
+        } else if player.POS == "CM" || player.POS == "CDM" || player.POS == "CAM" {
+            let average: f32 = (player.Passing.parse::<i32>().expect(&int_conversion_error) + player.Dribbling.parse::<i32>().expect(&int_conversion_error) + player.Vision.parse::<i32>().expect(&int_conversion_error) + player.Vision.parse::<i32>().expect(&int_conversion_error) + player.Crossing.parse::<i32>().expect(&int_conversion_error) + player.ShortPassing.parse::<i32>().expect(&int_conversion_error) + player.LongPassing.parse::<i32>().expect(&int_conversion_error)) as f32 / 6.0;
             let average = average.round() as i32;
 
             if strict {
-                if average == player.ovr {
+                if average == player.OVR.parse::<i32>().expect(&int_conversion_error) {
                     correct += 1;
-                    println!("{} is correct", player.name);
+                    println!("{} is correct", player.Name);
                 } else {
                     wrong += 1;
-                    println!("{} is wrong", player.name);
+                    println!("{} is wrong", player.Name);
                 }
             } else {
-                if average <= player.ovr + 3 && average >= player.ovr - 3 {
+                if average <= (player.OVR.parse::<i32>().expect(&int_conversion_error)) + 3 && average >= (player.OVR.parse::<i32>().expect(&int_conversion_error)) - 3 {
                     correct += 1;
-                    println!("{} is correct", player.name);
+                    println!("{} is correct", player.Name);
                 } else {
                     wrong += 1;
-                    diff += (average - player.ovr).abs();
+                    diff += (average - player.OVR.parse::<i32>().expect(&int_conversion_error)).abs();
                     println!("{}", diff);
                 }
             }
