@@ -1,4 +1,4 @@
-import * as data from "../data/data.json";
+import * as data from "../../data/data.json";
 import { Player } from "./player";
 const prompt = require("prompt-sync")();
 
