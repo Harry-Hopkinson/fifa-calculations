@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Harry-Hopkinson/fifa-calculations#readme",
   "devDependencies": {
-    "@types/node": "18.16.18",
+    "@types/node": "22.10.1",
     "prompt-sync": "4.2.0",
     "typescript": "5.1.3"
   }
